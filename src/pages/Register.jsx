@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import axios from 'axios';
+import { useAuth } from '../context/AuthContext';
 import { useTheme } from '../context/ThemeContext';
 
 const Register = () => {
@@ -13,6 +13,7 @@ const Register = () => {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const { register } = useAuth();
   const { theme, toggleTheme } = useTheme();
   const navigate = useNavigate();
 
@@ -28,22 +29,15 @@ const Register = () => {
     setError('');
     setLoading(true);
 
-    try {
-      const response = await axios.post('http://localhost:5000/api/auth/register', formData);
-      
-      if (response.data.token) {
-        setSuccess(true);
-        setTimeout(() => {
-          navigate('/login');
-        }, 2000);
-      } else {
-        setError('Registration successful! Please wait for admin approval.');
-        setTimeout(() => {
-          navigate('/login');
-        }, 3000);
-      }
-    } catch (err) {
-      setError(err.response?.data?.message || 'Registration failed. Please try again.');
+    const result = await register(formData);
+
+    if (result.success) {
+      setSuccess(true);
+      setTimeout(() => {
+        navigate('/dashboard');
+      }, 1500);
+    } else {
+      setError(result.message);
     }
 
     setLoading(false);
