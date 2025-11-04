@@ -14,9 +14,9 @@
   --animate-glow: glow 2s ease-in-out infinite alternate;
 
   --shadow-3xl: 0 35px 60px -15px rgba(0, 0, 0, 0.3);
-  --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.5);
-  --shadow-glow-lg: 0 0 30px rgba(99, 102, 241, 0.7);
-  --shadow-neon: 0 0 5px theme('colors.blue.400'), 0 0 20px theme('colors.blue.600');
+  --shadow-glow: 0 0 20px rgba(16, 185, 129, 0.5);
+  --shadow-glow-lg: 0 0 30px rgba(16, 185, 129, 0.7);
+  --shadow-neon: 0 0 5px theme('colors.emerald.400'), 0 0 20px theme('colors.emerald.600');
 }
 
 @theme inline {
@@ -71,8 +71,8 @@
 }
 
 @keyframes glow {
-  from { box-shadow: 0 0 10px rgba(99, 102, 241, 0.5), 0 0 20px rgba(99, 102, 241, 0.3); }
-  to { box-shadow: 0 0 20px rgba(99, 102, 241, 0.8), 0 0 30px rgba(99, 102, 241, 0.5); }
+  from { box-shadow: 0 0 10px rgba(16, 185, 129, 0.5), 0 0 20px rgba(16, 185, 129, 0.3); }
+  to { box-shadow: 0 0 20px rgba(16, 185, 129, 0.8), 0 0 30px rgba(16, 185, 129, 0.5); }
 }
 
 @keyframes shimmer {
@@ -140,13 +140,13 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
+  background: linear-gradient(135deg, #10b981, #0891b2, #06b6d4);
   border-radius: 10px;
   border: 2px solid #f1f5f9;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #4f46e5, #9333ea, #db2777);
+  background: linear-gradient(135deg, #059669, #0d9488, #0891b2);
 }
 
 /* Smooth transitions */
