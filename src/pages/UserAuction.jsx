@@ -181,7 +181,7 @@ const UserAuction = () => {
     const currentQuestion = codingQuestions[currentQuestionIndex];
 
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800">
+      <div className="min-h-screen bg-gradient-to-br from-emerald-900 via-teal-900 to-cyan-900">
         <div className="bg-gradient-to-r from-gray-800 to-gray-900 shadow-2xl p-4 md:p-6 border-b border-gray-700">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
             <div>
@@ -221,7 +221,7 @@ const UserAuction = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 h-[calc(100vh-120px)]">
           {/* Problem Description */}
-          <div className="p-6 overflow-y-auto bg-gradient-to-br from-slate-50 to-gray-100 border-r border-gray-700">
+          <div className="p-6 overflow-y-auto bg-gradient-to-br from-emerald-50 to-teal-50 border-r border-teal-700">
             <div className="max-w-3xl mx-auto">
               <div className="bg-white rounded-2xl shadow-xl p-6 mb-6 border border-gray-200">
                 <div className="flex items-center gap-2 mb-4">
@@ -238,7 +238,7 @@ const UserAuction = () => {
                 </div>
                 <div className="space-y-4">
                   {currentQuestion.question.testCases.map((tc, index) => (
-                    <div key={index} className="bg-gradient-to-r from-blue-50 to-indigo-50 p-5 rounded-xl border-2 border-blue-200">
+                    <div key={index} className="bg-gradient-to-r from-emerald-50 to-teal-50 p-5 rounded-xl border-2 border-emerald-200">
                       <p className="font-bold text-blue-900 mb-3 flex items-center gap-2">
                         <span className="bg-blue-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm">{index + 1}</span>
                         Test Case {index + 1}
@@ -298,7 +298,7 @@ const UserAuction = () => {
           <div className="flex justify-between items-center h-14">
             <div className="flex items-center gap-6">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center">
+                <div className="w-8 h-8 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-lg flex items-center justify-center">
                   <span className="text-white font-black text-sm">CA</span>
                 </div>
                 <span className="font-bold text-gray-900">Auction Arena</span>
@@ -388,14 +388,14 @@ const UserAuction = () => {
                 Current Question
               </h2>
               {currentQuestion && (
-                <span className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-semibold animate-pulse">
+                <span className="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-sm font-semibold animate-pulse">
                   Active
                 </span>
               )}
             </div>
             {currentQuestion ? (
               <div className="space-y-4">
-                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-4 border-l-4 border-blue-500">
+                <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-4 border-l-4 border-emerald-500">
                   <h3 className="text-xl font-bold text-gray-800 mb-2">{currentQuestion.title}</h3>
                   <p className="text-gray-700 leading-relaxed">{currentQuestion.description}</p>
                 </div>
@@ -468,7 +468,7 @@ const UserAuction = () => {
               <button
                 onClick={handlePlaceBid}
                 disabled={!isActive || !bidAmount}
-                className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl hover:from-blue-700 hover:to-indigo-700 transform hover:scale-[1.02] active:scale-[0.98] transition-all disabled:from-gray-400 disabled:to-gray-500 disabled:cursor-not-allowed disabled:transform-none btn-ripple"
+                className="w-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl hover:from-emerald-700 hover:to-teal-700 transform hover:scale-[1.02] active:scale-[0.98] transition-all disabled:from-gray-400 disabled:to-gray-500 disabled:cursor-not-allowed disabled:transform-none btn-ripple"
               >
                 {!isActive ? '⏸️ Bidding Closed' : !bidAmount ? '💰 Enter Amount' : '🚀 Place Bid'}
               </button>
@@ -497,7 +497,7 @@ const UserAuction = () => {
                   <tr key={aq._id} className="hover:bg-gray-50 transition">
                     <td className="px-4 py-3 text-sm font-medium text-gray-900">{aq.question?.title}</td>
                     <td className="px-4 py-3 text-sm">
-                      <span className="text-purple-600 font-semibold">{aq.bidAmount}</span>
+                      <span className="text-emerald-600 font-semibold">{aq.bidAmount}</span>
                     </td>
                     <td className="px-4 py-3 text-sm">
                       <span className={`px-2 py-1 rounded text-xs font-semibold ${

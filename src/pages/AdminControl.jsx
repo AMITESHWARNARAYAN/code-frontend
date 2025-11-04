@@ -132,7 +132,7 @@ const AdminControl = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-indigo-50 to-purple-100 p-4 md:p-6">
+    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-100 p-4 md:p-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8 animate-fade-in">
@@ -149,7 +149,7 @@ const AdminControl = () => {
               onClick={() => setActiveTab('questions')}
               className={`flex-1 px-6 py-4 font-bold text-lg transition-all relative ${
                 activeTab === 'questions'
-                  ? 'text-blue-600 bg-blue-50'
+                  ? 'text-emerald-600 bg-emerald-50'
                   : 'text-gray-600 hover:text-gray-800 hover:bg-gray-50'
               }`}
             >
@@ -158,26 +158,26 @@ const AdminControl = () => {
                 Questions
               </span>
               {activeTab === 'questions' && (
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 to-indigo-600"></div>
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-600 to-teal-600"></div>
               )}
             </button>
             <button
               onClick={() => setActiveTab('users')}
               className={`flex-1 px-6 py-4 font-bold text-lg transition-all relative ${
                 activeTab === 'users'
-                  ? 'text-purple-600 bg-purple-50'
+                  ? 'text-teal-600 bg-teal-50'
                   : 'text-gray-600 hover:text-gray-800 hover:bg-gray-50'
               }`}
             >
               <span className="flex items-center justify-center gap-2">
                 <span className="text-2xl">👥</span>
                 Users
-                <span className="bg-purple-100 text-purple-700 px-2 py-1 rounded-full text-sm font-bold">
+                <span className="bg-teal-100 text-teal-700 px-2 py-1 rounded-full text-sm font-bold">
                   {userCount}
                 </span>
               </span>
               {activeTab === 'users' && (
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-600 to-pink-600"></div>
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-teal-600 to-cyan-600"></div>
               )}
             </button>
           </div>
@@ -191,7 +191,7 @@ const AdminControl = () => {
                 <h2 className="text-2xl font-bold text-gray-800">DSA Questions</h2>
                 <button
                   onClick={() => setShowQuestionForm(!showQuestionForm)}
-                  className="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition"
+                  className="bg-emerald-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-emerald-700 transition"
                 >
                   {showQuestionForm ? 'Cancel' : 'Add Question'}
                 </button>
