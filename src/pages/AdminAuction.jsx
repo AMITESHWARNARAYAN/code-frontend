@@ -107,7 +107,7 @@ const AdminAuction = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-purple-50 to-pink-100 p-4 md:p-6">
+    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 p-4 md:p-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8 animate-fade-in">
@@ -136,7 +136,7 @@ const AdminAuction = () => {
                 <select
                   value={selectedQuestion}
                   onChange={(e) => setSelectedQuestion(e.target.value)}
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl text-base font-medium focus:outline-none focus:border-purple-500 focus:ring-4 focus:ring-purple-100 disabled:bg-gray-100 disabled:cursor-not-allowed appearance-none transition-all"
+                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl text-base font-medium focus:outline-none focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100 disabled:bg-gray-100 disabled:cursor-not-allowed appearance-none transition-all"
                   disabled={isActive}
                 >
                   <option value="">🎯 Select a question to push</option>
@@ -155,12 +155,12 @@ const AdminAuction = () => {
               <button
                 onClick={handlePushQuestion}
                 disabled={isActive || !selectedQuestion}
-                className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl hover:from-purple-700 hover:to-pink-700 transform hover:scale-[1.02] active:scale-[0.98] transition-all disabled:from-gray-400 disabled:to-gray-500 disabled:cursor-not-allowed disabled:transform-none btn-ripple"
+                className="w-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl hover:from-emerald-700 hover:to-teal-700 transform hover:scale-[1.02] active:scale-[0.98] transition-all disabled:from-gray-400 disabled:to-gray-500 disabled:cursor-not-allowed disabled:transform-none btn-ripple"
               >
                 {isActive ? '⏸️ Auction in Progress' : selectedQuestion ? '🚀 Push Question' : '📝 Select Question First'}
               </button>
               {selectedQuestion && !isActive && (
-                <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg p-3 border border-purple-200">
+                <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-lg p-3 border border-emerald-200">
                   <p className="text-sm text-gray-700">✨ Ready to start the auction!</p>
                 </div>
               )}
@@ -186,7 +186,7 @@ const AdminAuction = () => {
               <div className={`text-7xl font-black mb-4 ${
                 timeRemaining < 10 && (isActive || isCodingPhase)
                   ? 'text-red-600 animate-bounce'
-                  : 'bg-gradient-to-r from-purple-500 to-pink-600 bg-clip-text text-transparent'
+                  : 'bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent'
               }`}>
                 {formatTime(timeRemaining)}
               </div>

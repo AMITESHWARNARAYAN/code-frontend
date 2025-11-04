@@ -46,12 +46,14 @@ const Register = () => {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-slate-900 flex transition-colors">
       {/* Left Side - Branding */}
-      <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-slate-800 to-slate-900 p-12 flex-col justify-between relative overflow-hidden">
-        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+      <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-700 p-12 flex-col justify-between relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+        </div>
         <div className="relative z-10">
           <div className="flex items-center gap-3 mb-12">
             <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg">
-              <span className="text-2xl font-black text-slate-800">CA</span>
+              <span className="text-2xl font-black bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">⚡</span>
             </div>
             <span className="text-2xl font-bold text-white">CodeAuction</span>
           </div>
@@ -59,7 +61,7 @@ const Register = () => {
             <h1 className="text-5xl font-black text-white mb-6 leading-tight">
               Start your coding journey today
             </h1>
-            <p className="text-slate-300 text-lg leading-relaxed mb-8">
+            <p className="text-emerald-50 text-lg leading-relaxed mb-8">
               Create your account and join a community of passionate developers competing in real-time coding challenges.
             </p>
             <div className="space-y-4">
@@ -90,7 +92,7 @@ const Register = () => {
             </div>
           </div>
         </div>
-        <div className="relative z-10 text-slate-400 text-sm">
+        <div className="relative z-10 text-emerald-100 text-sm">
           © 2025 CodeAuction. All rights reserved.
         </div>
       </div>
@@ -116,10 +118,10 @@ const Register = () => {
           {/* Mobile Logo */}
           <div className="lg:hidden text-center mb-8">
             <div className="flex items-center justify-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-slate-800 dark:bg-slate-700 rounded-lg flex items-center justify-center">
-                <span className="text-white font-black">CA</span>
+              <div className="w-10 h-10 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-lg flex items-center justify-center">
+                <span className="text-white font-black text-lg">⚡</span>
               </div>
-              <span className="text-xl font-bold text-gray-900 dark:text-white">CodeAuction</span>
+              <span className="text-xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">CodeAuction</span>
             </div>
           </div>
 
@@ -156,7 +158,7 @@ const Register = () => {
                 value={formData.username}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-500 focus:border-transparent transition text-gray-900 dark:text-white bg-white dark:bg-slate-800"
+                className="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition text-gray-900 dark:text-white bg-white dark:bg-slate-800"
                 placeholder="Choose a username"
               />
             </div>
@@ -172,7 +174,7 @@ const Register = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-500 focus:border-transparent transition text-gray-900 dark:text-white bg-white dark:bg-slate-800"
+                className="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition text-gray-900 dark:text-white bg-white dark:bg-slate-800"
                 placeholder="you@example.com"
               />
             </div>
@@ -188,7 +190,7 @@ const Register = () => {
                 value={formData.password}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-500 focus:border-transparent transition text-gray-900 dark:text-white bg-white dark:bg-slate-800"
+                className="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition text-gray-900 dark:text-white bg-white dark:bg-slate-800"
                 placeholder="Create a strong password"
               />
             </div>
@@ -204,7 +206,7 @@ const Register = () => {
                 value={formData.teamName}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-500 focus:border-transparent transition text-gray-900 dark:text-white bg-white dark:bg-slate-800"
+                className="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition text-gray-900 dark:text-white bg-white dark:bg-slate-800"
                 placeholder="Your team name"
               />
             </div>
@@ -213,15 +215,15 @@ const Register = () => {
               <input
                 type="checkbox"
                 required
-                className="w-4 h-4 mt-1 text-slate-600 border-gray-300 dark:border-slate-600 rounded focus:ring-slate-500"
+                className="w-4 h-4 mt-1 text-emerald-600 border-gray-300 dark:border-slate-600 rounded focus:ring-emerald-500"
               />
               <label className="ml-2 text-sm text-gray-600 dark:text-gray-400">
                 I agree to the{' '}
-                <a href="#" className="text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-300 font-medium">
+                <a href="#" className="text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 font-medium">
                   Terms of Service
                 </a>{' '}
                 and{' '}
-                <a href="#" className="text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-300 font-medium">
+                <a href="#" className="text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 font-medium">
                   Privacy Policy
                 </a>
               </label>
@@ -230,7 +232,7 @@ const Register = () => {
             <button
               type="submit"
               disabled={loading || success}
-              className="w-full bg-slate-800 dark:bg-slate-700 text-white py-3 rounded-lg font-semibold hover:bg-slate-900 dark:hover:bg-slate-600 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2 transition disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white py-3 rounded-lg font-semibold hover:from-emerald-700 hover:to-teal-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 transition disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? (
                 <span className="flex items-center justify-center gap-2">

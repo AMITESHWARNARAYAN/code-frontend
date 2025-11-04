@@ -75,10 +75,10 @@ export default function Landing() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-slate-800 dark:bg-slate-700 rounded-lg flex items-center justify-center">
-                <span className="text-white font-black text-xl">CA</span>
+              <div className="w-10 h-10 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-lg flex items-center justify-center">
+                <span className="text-white font-black text-xl">⚡</span>
               </div>
-              <span className="text-xl font-black text-gray-900 dark:text-white">CodeAuction</span>
+              <span className="text-xl font-black bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">CodeAuction</span>
             </div>
             <div className="hidden md:flex items-center gap-8">
               <a href="#features" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white font-medium transition">Features</a>
@@ -97,7 +97,7 @@ export default function Landing() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
                   </svg>
                 ) : (
-                  <svg className="w-5 h-5 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                   </svg>
                 )}
@@ -110,7 +110,7 @@ export default function Landing() {
               </button>
               <button
                 onClick={() => navigate('/register')}
-                className="px-6 py-2 bg-slate-800 dark:bg-slate-700 text-white font-semibold rounded-lg hover:bg-slate-900 dark:hover:bg-slate-600 transition shadow-lg hover:shadow-xl transform hover:scale-105"
+                className="px-6 py-2 bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-semibold rounded-lg hover:from-emerald-700 hover:to-teal-700 transition shadow-lg hover:shadow-xl transform hover:scale-105"
               >
                 Get Started
               </button>
@@ -120,16 +120,16 @@ export default function Landing() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-gray-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
+      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-block bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-4 py-2 rounded-full text-sm font-bold mb-6">
+              <div className="inline-block bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 px-4 py-2 rounded-full text-sm font-bold mb-6">
                 🚀 The Future of Competitive Coding
               </div>
               <h1 className="text-5xl md:text-6xl font-black text-gray-900 dark:text-white mb-6 leading-tight">
                 Master Coding Through
-                <span className="bg-gradient-to-r from-slate-700 to-slate-900 dark:from-slate-300 dark:to-slate-100 bg-clip-text text-transparent"> Live Auctions</span>
+                <span className="bg-gradient-to-r from-emerald-600 to-teal-600 dark:from-emerald-400 dark:to-teal-400 bg-clip-text text-transparent"> Live Auctions</span>
               </h1>
               <p className="text-xl text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
                 Bid on coding challenges, compete in real-time, and level up your skills with our innovative auction-based learning platform.
@@ -137,7 +137,7 @@ export default function Landing() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <button
                   onClick={() => navigate('/register')}
-                  className="px-8 py-4 bg-slate-800 dark:bg-slate-700 text-white font-bold rounded-xl hover:bg-slate-900 dark:hover:bg-slate-600 transition shadow-xl hover:shadow-2xl transform hover:scale-105 text-lg"
+                  className="px-8 py-4 bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-bold rounded-xl hover:from-emerald-700 hover:to-teal-700 transition shadow-xl hover:shadow-2xl transform hover:scale-105 text-lg"
                 >
                   Start Free Trial
                 </button>
@@ -200,7 +200,7 @@ export default function Landing() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-black text-slate-800 dark:text-slate-200 mb-2">
+                <div className="text-4xl md:text-5xl font-black bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent mb-2">
                   {stat.value}
                 </div>
                 <div className="text-gray-600 dark:text-gray-400 font-medium">{stat.label}</div>
@@ -225,9 +225,9 @@ export default function Landing() {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition border border-gray-200 dark:border-slate-700 hover:border-slate-400 dark:hover:border-slate-600 group"
+                className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition border border-gray-200 dark:border-slate-700 hover:border-emerald-400 dark:hover:border-emerald-600 group"
               >
-                <div className="w-12 h-12 bg-slate-100 dark:bg-slate-700 rounded-lg flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">
+                <div className="w-12 h-12 bg-emerald-100 dark:bg-emerald-900/30 rounded-lg flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition">
                   {feature.icon}
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{feature.title}</h3>
