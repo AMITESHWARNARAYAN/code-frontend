@@ -109,7 +109,7 @@ const UserAuction = () => {
 
   const handlePlaceBid = () => {
     const amount = parseInt(bidAmount);
-    
+
     if (!amount || amount <= 0) {
       alert('Please enter a valid bid amount');
       return;
@@ -181,8 +181,8 @@ const UserAuction = () => {
     const currentQuestion = codingQuestions[currentQuestionIndex];
 
     return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-900 via-teal-900 to-cyan-900">
-        <div className="bg-gradient-to-r from-gray-800 to-gray-900 shadow-2xl p-4 md:p-6 border-b border-gray-700">
+      <div className="min-h-screen bg-gradient-to-br from-[#1F1F1F] via-[#2D2D2D] to-[#1F1F1F]">
+        <div className="bg-gradient-to-r from-[#7C2D3A] to-[#A53E4C] shadow-warm-lg p-4 md:p-6 border-b border-[#8B0000]/30">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
             <div>
               <div className="flex items-center gap-3 mb-2">
@@ -190,28 +190,26 @@ const UserAuction = () => {
                 <h1 className="text-2xl md:text-3xl font-black text-white">{currentQuestion.question.title}</h1>
               </div>
               <div className="flex items-center gap-3">
-                <p className="text-sm text-gray-400">
-                  Question <span className="font-bold text-blue-400">{currentQuestionIndex + 1}</span> of <span className="font-bold">{codingQuestions.length}</span>
+                <p className="text-sm text-white/80">
+                  Question <span className="font-bold text-[#F59E0B]">{currentQuestionIndex + 1}</span> of <span className="font-bold">{codingQuestions.length}</span>
                 </p>
-                <span className={`px-3 py-1 rounded-full text-xs font-bold ${
-                  currentQuestion.question.difficulty === 'Easy' ? 'bg-green-500 text-white' :
-                  currentQuestion.question.difficulty === 'Medium' ? 'bg-yellow-500 text-white' :
-                  'bg-red-500 text-white'
-                }`}>
+                <span className={`px-3 py-1 rounded-full text-xs font-bold ${currentQuestion.question.difficulty === 'Easy' ? 'bg-[#6B8E23] text-white' :
+                  currentQuestion.question.difficulty === 'Medium' ? 'bg-[#D97706] text-white' :
+                    'bg-[#8B0000] text-white'
+                  }`}>
                   {currentQuestion.question.difficulty}
                 </span>
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <div className={`text-3xl md:text-4xl font-black ${
-                timeRemaining < 60 ? 'text-red-500 animate-pulse' : 'text-blue-400'
-              }`}>
+              <div className={`text-3xl md:text-4xl font-black ${timeRemaining < 60 ? 'text-[#8B0000] animate-pulse' : 'text-[#F59E0B]'
+                }`}>
                 ⏱️ {formatTime(timeRemaining)}
               </div>
               <button
                 onClick={handleSubmitCode}
                 disabled={submitting}
-                className="bg-gradient-to-r from-green-600 to-emerald-600 text-white px-6 py-3 rounded-xl font-bold shadow-lg hover:shadow-xl hover:from-green-700 hover:to-emerald-700 transform hover:scale-105 active:scale-95 transition-all disabled:from-gray-600 disabled:to-gray-700 disabled:cursor-not-allowed btn-ripple"
+                className="bg-gradient-to-r from-[#6B8E23] to-[#85A438] text-white px-6 py-3 rounded-xl font-bold shadow-warm hover:shadow-warm-lg hover:from-[#5A7A1C] hover:to-[#709330] transform hover:scale-105 active:scale-95 transition-all disabled:from-[#6B6B6B] disabled:to-[#8C8C8C] disabled:cursor-not-allowed btn-ripple"
               >
                 {submitting ? '⏳ Submitting...' : currentQuestionIndex < codingQuestions.length - 1 ? '✅ Submit & Next' : '🏁 Submit Final'}
               </button>
@@ -221,36 +219,36 @@ const UserAuction = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 h-[calc(100vh-120px)]">
           {/* Problem Description */}
-          <div className="p-6 overflow-y-auto bg-gradient-to-br from-emerald-50 to-teal-50 border-r border-teal-700">
+          <div className="p-6 overflow-y-auto bg-gradient-to-br from-[#FAF8F5] to-[#FFF9F0] border-r border-[#E8E4DD] dark:border-[#3D3D3D]">
             <div className="max-w-3xl mx-auto">
-              <div className="bg-white rounded-2xl shadow-xl p-6 mb-6 border border-gray-200">
+              <div className="bg-white rounded-2xl shadow-soft p-6 mb-6 border border-[#E8E4DD]">
                 <div className="flex items-center gap-2 mb-4">
                   <span className="text-2xl">📋</span>
-                  <h2 className="text-2xl font-black text-gray-800">Description</h2>
+                  <h2 className="text-2xl font-black text-[#1F1F1F]">Description</h2>
                 </div>
-                <p className="text-gray-700 whitespace-pre-wrap leading-relaxed text-lg">{currentQuestion.question.description}</p>
+                <p className="text-[#1F1F1F] whitespace-pre-wrap leading-relaxed text-lg">{currentQuestion.question.description}</p>
               </div>
 
-              <div className="bg-white rounded-2xl shadow-xl p-6 border border-gray-200">
+              <div className="bg-white rounded-2xl shadow-soft p-6 border border-[#E8E4DD]">
                 <div className="flex items-center gap-2 mb-4">
                   <span className="text-2xl">🧪</span>
-                  <h2 className="text-2xl font-black text-gray-800">Test Cases</h2>
+                  <h2 className="text-2xl font-black text-[#1F1F1F]">Test Cases</h2>
                 </div>
                 <div className="space-y-4">
                   {currentQuestion.question.testCases.map((tc, index) => (
-                    <div key={index} className="bg-gradient-to-r from-emerald-50 to-teal-50 p-5 rounded-xl border-2 border-emerald-200">
-                      <p className="font-bold text-blue-900 mb-3 flex items-center gap-2">
-                        <span className="bg-blue-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm">{index + 1}</span>
+                    <div key={index} className="bg-gradient-to-r from-amber-50 to-orange-50 p-5 rounded-xl border-2 border-[#D97706]/30">
+                      <p className="font-bold text-[#7C2D3A] mb-3 flex items-center gap-2">
+                        <span className="bg-[#D97706] text-white w-6 h-6 rounded-full flex items-center justify-center text-sm">{index + 1}</span>
                         Test Case {index + 1}
                       </p>
                       <div className="space-y-3">
                         <div>
-                          <span className="text-sm font-bold text-gray-700 uppercase tracking-wide">Input:</span>
-                          <pre className="bg-white p-3 rounded-lg mt-2 text-sm font-mono border border-gray-300 shadow-sm">{tc.input}</pre>
+                          <span className="text-sm font-bold text-[#1F1F1F] uppercase tracking-wide">Input:</span>
+                          <pre className="bg-white p-3 rounded-lg mt-2 text-sm font-mono border border-[#E8E4DD] shadow-sm">{tc.input}</pre>
                         </div>
                         <div>
-                          <span className="text-sm font-bold text-gray-700 uppercase tracking-wide">Expected Output:</span>
-                          <pre className="bg-white p-3 rounded-lg mt-2 text-sm font-mono border border-gray-300 shadow-sm">{tc.expectedOutput}</pre>
+                          <span className="text-sm font-bold text-[#1F1F1F] uppercase tracking-wide">Expected Output:</span>
+                          <pre className="bg-white p-3 rounded-lg mt-2 text-sm font-mono border border-[#E8E4DD] shadow-sm">{tc.expectedOutput}</pre>
                         </div>
                       </div>
                     </div>
@@ -261,9 +259,9 @@ const UserAuction = () => {
           </div>
 
           {/* Code Editor */}
-          <div className="bg-gray-900 relative">
-            <div className="absolute top-4 left-4 z-10 bg-gray-800 px-4 py-2 rounded-lg border border-gray-700 shadow-lg">
-              <span className="text-yellow-400 font-mono text-sm font-bold">JavaScript</span>
+          <div className="bg-[#1F1F1F] relative">
+            <div className="absolute top-4 left-4 z-10 bg-[#2D2D2D] px-4 py-2 rounded-lg border border-[#3D3D3D] shadow-lg">
+              <span className="text-[#F59E0B] font-mono text-sm font-bold">JavaScript</span>
             </div>
             <Editor
               height="100%"
@@ -291,29 +289,29 @@ const UserAuction = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#FAF8F5] dark:bg-[#1F1F1F]">
       {/* Top Navigation */}
-      <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
+      <nav className="bg-white dark:bg-[#2D2D2D] border-b border-[#E8E4DD] dark:border-[#3D3D3D] sticky top-0 z-50 shadow-soft">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-14">
             <div className="flex items-center gap-6">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-lg flex items-center justify-center">
+                <div className="w-8 h-8 bg-gradient-to-r from-[#7C2D3A] to-[#A53E4C] rounded-lg flex items-center justify-center shadow-lg">
                   <span className="text-white font-black text-sm">CA</span>
                 </div>
-                <span className="font-bold text-gray-900">Auction Arena</span>
+                <span className="font-bold text-[#1F1F1F] dark:text-[#FAF8F5]">Auction Arena</span>
               </div>
               <div className="hidden md:flex items-center gap-1 text-sm">
-                <span className="text-gray-500">Wallet:</span>
-                <span className="font-bold text-green-600">{wallet} pts</span>
+                <span className="text-[#6B6B6B] dark:text-[#8C8C8C]">Wallet:</span>
+                <span className="font-bold text-[#6B8E23]">{wallet} pts</span>
               </div>
             </div>
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-2 text-sm">
-                <div className={`w-2 h-2 rounded-full ${isActive ? 'bg-green-500 animate-pulse' : 'bg-gray-400'}`}></div>
-                <span className="font-medium text-gray-700">{isActive ? 'Live' : 'Idle'}</span>
+                <div className={`w-2 h-2 rounded-full ${isActive ? 'bg-[#6B8E23] animate-pulse' : 'bg-[#8C8C8C]'}`}></div>
+                <span className="font-medium text-[#1F1F1F] dark:text-[#FAF8F5]">{isActive ? 'Live' : 'Idle'}</span>
               </div>
-              <div className="text-lg font-bold text-gray-900">{formatTime(timeRemaining)}</div>
+              <div className="text-lg font-bold text-[#1F1F1F] dark:text-[#FAF8F5]">{formatTime(timeRemaining)}</div>
             </div>
           </div>
         </div>
@@ -323,41 +321,40 @@ const UserAuction = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           {/* Current Question - Takes 2 columns */}
-          <div className="lg:col-span-2 bg-white rounded-lg shadow border border-gray-200 p-5">
+          <div className="lg:col-span-2 bg-white dark:bg-[#2D2D2D] rounded-lg shadow-soft border border-[#E8E4DD] dark:border-[#3D3D3D] p-5">
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-sm font-semibold text-gray-700 uppercase tracking-wide">Current Question</h3>
               {currentQuestion && (
-                <span className={`px-2 py-1 rounded text-xs font-bold ${
-                  currentQuestion.difficulty === 'Easy' ? 'bg-green-100 text-green-700' :
-                  currentQuestion.difficulty === 'Medium' ? 'bg-yellow-100 text-yellow-700' :
-                  'bg-red-100 text-red-700'
-                }`}>
+                <span className={`px-2 py-1 rounded text-xs font-bold ${currentQuestion.difficulty === 'Easy' ? 'bg-[#6B8E23]/10 text-[#6B8E23] border border-[#6B8E23]/20' :
+                  currentQuestion.difficulty === 'Medium' ? 'bg-[#D97706]/10 text-[#D97706] border border-[#D97706]/20' :
+                    'bg-[#8B0000]/10 text-[#8B0000] border border-[#8B0000]/20'
+                  }`}>
                   {currentQuestion.difficulty}
                 </span>
               )}
             </div>
             {currentQuestion ? (
               <div>
-                <h2 className="text-xl font-bold text-gray-900 mb-2">{currentQuestion.title}</h2>
-                <p className="text-gray-600 text-sm leading-relaxed">{currentQuestion.description}</p>
+                <h2 className="text-xl font-bold text-[#1F1F1F] dark:text-[#FAF8F5] mb-2">{currentQuestion.title}</h2>
+                <p className="text-[#6B6B6B] dark:text-[#8C8C8C] text-sm leading-relaxed">{currentQuestion.description}</p>
               </div>
             ) : (
               <div className="text-center py-8">
                 <div className="text-4xl mb-2 opacity-30">📝</div>
-                <p className="text-gray-500 text-sm">No active question</p>
+                <p className="text-[#8C8C8C] text-sm">No active question</p>
               </div>
             )}
           </div>
 
           {/* Bidding Panel */}
-          <div className="bg-white rounded-lg shadow border border-gray-200 p-5">
+          <div className="bg-white dark:bg-[#2D2D2D] rounded-lg shadow-soft border border-[#E8E4DD] dark:border-[#3D3D3D] p-5">
             <h3 className="text-sm font-semibold text-gray-700 uppercase tracking-wide mb-4">Place Bid</h3>
 
             {currentBid.bidderUsername && (
-              <div className="mb-4 p-3 bg-yellow-50 rounded-lg border border-yellow-200">
+              <div className="mb-4 p-3 bg-[#D97706]/10 rounded-lg border border-[#D97706]/30">
                 <p className="text-xs text-gray-600 mb-1">Current Highest</p>
-                <p className="text-2xl font-black text-yellow-700">{currentBid.amount}</p>
-                <p className="text-xs text-gray-600 mt-1">{currentBid.bidderUsername}</p>
+                <p className="text-2xl font-black text-[#D97706]">{currentBid.amount}</p>
+                <p className="text-xs text-[#6B6B6B] dark:text-[#8C8C8C] mt-1">{currentBid.bidderUsername}</p>
               </div>
             )}
 
@@ -373,7 +370,7 @@ const UserAuction = () => {
               <button
                 onClick={handlePlaceBid}
                 disabled={!isActive || !bidAmount}
-                className="w-full bg-blue-600 text-white py-2 rounded-lg font-semibold text-sm hover:bg-blue-700 transition disabled:bg-gray-400 disabled:cursor-not-allowed"
+                className="w-full bg-gradient-to-r from-[#7C2D3A] to-[#A53E4C] text-white py-2 rounded-lg font-semibold text-sm hover:shadow-warm transition disabled:from-[#8C8C8C] disabled:to-[#6B6B6B] disabled:cursor-not-allowed"
               >
                 {!isActive ? 'Bidding Closed' : 'Place Bid'}
               </button>
@@ -388,23 +385,22 @@ const UserAuction = () => {
                 Current Question
               </h2>
               {currentQuestion && (
-                <span className="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-sm font-semibold animate-pulse">
+                <span className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-semibold animate-pulse">
                   Active
                 </span>
               )}
             </div>
             {currentQuestion ? (
               <div className="space-y-4">
-                <div className="bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl p-4 border-l-4 border-emerald-500">
+                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-4 border-l-4 border-blue-500">
                   <h3 className="text-xl font-bold text-gray-800 mb-2">{currentQuestion.title}</h3>
                   <p className="text-gray-700 leading-relaxed">{currentQuestion.description}</p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className={`px-4 py-2 rounded-full text-sm font-bold shadow-md ${
-                    currentQuestion.difficulty === 'Easy' ? 'bg-gradient-to-r from-green-400 to-green-600 text-white' :
+                  <span className={`px-4 py-2 rounded-full text-sm font-bold shadow-md ${currentQuestion.difficulty === 'Easy' ? 'bg-gradient-to-r from-green-400 to-green-600 text-white' :
                     currentQuestion.difficulty === 'Medium' ? 'bg-gradient-to-r from-yellow-400 to-orange-500 text-white' :
-                    'bg-gradient-to-r from-red-500 to-pink-600 text-white'
-                  }`}>
+                      'bg-gradient-to-r from-red-500 to-pink-600 text-white'
+                    }`}>
                     {currentQuestion.difficulty}
                   </span>
                   <span className="text-sm text-gray-500">Difficulty Level</span>
@@ -468,7 +464,7 @@ const UserAuction = () => {
               <button
                 onClick={handlePlaceBid}
                 disabled={!isActive || !bidAmount}
-                className="w-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl hover:from-emerald-700 hover:to-teal-700 transform hover:scale-[1.02] active:scale-[0.98] transition-all disabled:from-gray-400 disabled:to-gray-500 disabled:cursor-not-allowed disabled:transform-none btn-ripple"
+                className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl hover:from-blue-700 hover:to-indigo-700 transform hover:scale-[1.02] active:scale-[0.98] transition-all disabled:from-gray-400 disabled:to-gray-500 disabled:cursor-not-allowed disabled:transform-none btn-ripple"
               >
                 {!isActive ? '⏸️ Bidding Closed' : !bidAmount ? '💰 Enter Amount' : '🚀 Place Bid'}
               </button>
@@ -497,24 +493,22 @@ const UserAuction = () => {
                   <tr key={aq._id} className="hover:bg-gray-50 transition">
                     <td className="px-4 py-3 text-sm font-medium text-gray-900">{aq.question?.title}</td>
                     <td className="px-4 py-3 text-sm">
-                      <span className="text-emerald-600 font-semibold">{aq.bidAmount}</span>
+                      <span className="text-purple-600 font-semibold">{aq.bidAmount}</span>
                     </td>
                     <td className="px-4 py-3 text-sm">
-                      <span className={`px-2 py-1 rounded text-xs font-semibold ${
-                        aq.status === 'submitted' ? 'bg-green-100 text-green-700' :
-                        aq.status === 'coding' ? 'bg-blue-100 text-blue-700' :
-                        'bg-gray-100 text-gray-700'
-                      }`}>
+                      <span className={`px-2 py-1 rounded text-xs font-semibold ${aq.status === 'submitted' ? 'bg-[#6B8E23]/10 text-[#6B8E23] border border-[#6B8E23]/20' :
+                        aq.status === 'coding' ? 'bg-[#D97706]/10 text-[#D97706] border border-[#D97706]/20' :
+                          'bg-[#8C8C8C]/10 text-[#8C8C8C] border border-[#8C8C8C]/20'
+                        }`}>
                         {aq.status}
                       </span>
                     </td>
                     <td className="px-4 py-3 text-sm">
                       {aq.score !== null ? (
-                        <span className={`font-bold ${
-                          aq.score >= 80 ? 'text-green-600' :
-                          aq.score >= 50 ? 'text-yellow-600' :
-                          'text-red-600'
-                        }`}>
+                        <span className={`font-bold ${aq.score >= 80 ? 'text-[#6B8E23]' :
+                          aq.score >= 50 ? 'text-[#D97706]' :
+                            'text-[#8B0000]'
+                          }`}>
                           {aq.score}%
                         </span>
                       ) : (

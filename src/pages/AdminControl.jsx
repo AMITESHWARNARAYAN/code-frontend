@@ -132,7 +132,7 @@ const AdminControl = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-100 p-4 md:p-6">
+    <div className="min-h-screen bg-gradient-to-br from-[#FAF8F5] via-[#FFF9F0] to-[#FAF8F5] dark:from-[#1F1F1F] dark:via-[#2D2D2D] dark:to-[#1F1F1F] p-4 md:p-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8 animate-fade-in">
@@ -147,37 +147,35 @@ const AdminControl = () => {
           <div className="flex border-b border-gray-200">
             <button
               onClick={() => setActiveTab('questions')}
-              className={`flex-1 px-6 py-4 font-bold text-lg transition-all relative ${
-                activeTab === 'questions'
-                  ? 'text-emerald-600 bg-emerald-50'
-                  : 'text-gray-600 hover:text-gray-800 hover:bg-gray-50'
-              }`}
+              className={`flex-1 px-6 py-4 font-bold text-lg transition-all relative ${activeTab === 'questions'
+                  ? 'text-[#7C2D3A] bg-[#7C2D3A]/5'
+                  : 'text-[#6B6B6B] hover:text-[#1F1F1F] hover:bg-[#E8E4DD]/30'
+                }`}
             >
               <span className="flex items-center justify-center gap-2">
                 <span className="text-2xl">📝</span>
                 Questions
               </span>
               {activeTab === 'questions' && (
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-600 to-teal-600"></div>
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#7C2D3A] to-[#A53E4C]"></div>
               )}
             </button>
             <button
               onClick={() => setActiveTab('users')}
-              className={`flex-1 px-6 py-4 font-bold text-lg transition-all relative ${
-                activeTab === 'users'
-                  ? 'text-teal-600 bg-teal-50'
-                  : 'text-gray-600 hover:text-gray-800 hover:bg-gray-50'
-              }`}
+              className={`flex-1 px-6 py-4 font-bold text-lg transition-all relative ${activeTab === 'users'
+                  ? 'text-[#D97706] bg-[#D97706]/5'
+                  : 'text-[#6B6B6B] hover:text-[#1F1F1F] hover:bg-[#E8E4DD]/30'
+                }`}
             >
               <span className="flex items-center justify-center gap-2">
                 <span className="text-2xl">👥</span>
                 Users
-                <span className="bg-teal-100 text-teal-700 px-2 py-1 rounded-full text-sm font-bold">
+                <span className="bg-[#D97706]/10 text-[#D97706] px-2 py-1 rounded-full text-sm font-bold border border-[#D97706]/20">
                   {userCount}
                 </span>
               </span>
               {activeTab === 'users' && (
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-teal-600 to-cyan-600"></div>
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#D97706] to-[#F59E0B]"></div>
               )}
             </button>
           </div>
@@ -191,7 +189,7 @@ const AdminControl = () => {
                 <h2 className="text-2xl font-bold text-gray-800">DSA Questions</h2>
                 <button
                   onClick={() => setShowQuestionForm(!showQuestionForm)}
-                  className="bg-emerald-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-emerald-700 transition"
+                  className="bg-gradient-to-r from-[#7C2D3A] to-[#A53E4C] text-white px-4 py-2 rounded-lg font-semibold hover:shadow-warm transition"
                 >
                   {showQuestionForm ? 'Cancel' : 'Add Question'}
                 </button>
@@ -207,7 +205,7 @@ const AdminControl = () => {
                       value={questionForm.title}
                       onChange={handleQuestionFormChange}
                       required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-full px-4 py-2 border border-[#E8E4DD] dark:border-[#3D3D3D] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D97706]"
                     />
                   </div>
 
@@ -219,7 +217,7 @@ const AdminControl = () => {
                       onChange={handleQuestionFormChange}
                       required
                       rows="4"
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-full px-4 py-2 border border-[#E8E4DD] dark:border-[#3D3D3D] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D97706]"
                     />
                   </div>
 
@@ -230,7 +228,7 @@ const AdminControl = () => {
                         name="difficulty"
                         value={questionForm.difficulty}
                         onChange={handleQuestionFormChange}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full px-4 py-2 border border-[#E8E4DD] dark:border-[#3D3D3D] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D97706]"
                       >
                         <option value="Easy">Easy</option>
                         <option value="Medium">Medium</option>
@@ -246,7 +244,7 @@ const AdminControl = () => {
                         value={questionForm.tags}
                         onChange={handleQuestionFormChange}
                         placeholder="array, sorting, dynamic-programming"
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="w-full px-4 py-2 border border-[#E8E4DD] dark:border-[#3D3D3D] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D97706]"
                       />
                     </div>
                   </div>
@@ -258,7 +256,7 @@ const AdminControl = () => {
                       value={questionForm.starterCode}
                       onChange={handleQuestionFormChange}
                       rows="4"
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono text-sm"
+                      className="w-full px-4 py-2 border border-[#E8E4DD] dark:border-[#3D3D3D] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D97706] font-mono text-sm"
                     />
                   </div>
 
@@ -268,7 +266,7 @@ const AdminControl = () => {
                       <button
                         type="button"
                         onClick={addTestCase}
-                        className="text-blue-600 hover:text-blue-700 font-semibold"
+                        className="text-[#D97706] hover:text-[#F59E0B] font-semibold"
                       >
                         + Add Test Case
                       </button>
@@ -282,7 +280,7 @@ const AdminControl = () => {
                             value={tc.input}
                             onChange={(e) => handleTestCaseChange(index, 'input', e.target.value)}
                             required
-                            className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full px-3 py-2 border border-[#E8E4DD] dark:border-[#3D3D3D] rounded focus:outline-none focus:ring-2 focus:ring-[#D97706]"
                           />
                         </div>
                         <div>
@@ -293,13 +291,13 @@ const AdminControl = () => {
                               value={tc.expectedOutput}
                               onChange={(e) => handleTestCaseChange(index, 'expectedOutput', e.target.value)}
                               required
-                              className="flex-1 px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                              className="flex-1 px-3 py-2 border border-[#E8E4DD] dark:border-[#3D3D3D] rounded focus:outline-none focus:ring-2 focus:ring-[#D97706]"
                             />
                             {questionForm.testCases.length > 1 && (
                               <button
                                 type="button"
                                 onClick={() => removeTestCase(index)}
-                                className="text-red-600 hover:text-red-700 px-2"
+                                className="text-[#8B0000] hover:text-[#A52A2A] px-2"
                               >
                                 ✕
                               </button>
@@ -312,7 +310,7 @@ const AdminControl = () => {
 
                   <button
                     type="submit"
-                    className="w-full bg-green-600 text-white py-2 rounded-lg font-semibold hover:bg-green-700 transition"
+                    className="w-full bg-gradient-to-r from-[#6B8E23] to-[#85A438] text-white py-2 rounded-lg font-semibold hover:shadow-warm transition"
                   >
                     Create Question
                   </button>
@@ -335,11 +333,10 @@ const AdminControl = () => {
                       <tr key={q._id} className="hover:bg-gray-50">
                         <td className="px-4 py-3 text-sm font-medium">{q.title}</td>
                         <td className="px-4 py-3 text-sm">
-                          <span className={`px-2 py-1 rounded-full text-xs font-semibold ${
-                            q.difficulty === 'Easy' ? 'bg-green-100 text-green-800' :
-                            q.difficulty === 'Medium' ? 'bg-yellow-100 text-yellow-800' :
-                            'bg-red-100 text-red-800'
-                          }`}>
+                          <span className={`px-2 py-1 rounded-full text-xs font-semibold ${q.difficulty === 'Easy' ? 'bg-[#6B8E23]/10 text-[#6B8E23] border border-[#6B8E23]/20' :
+                              q.difficulty === 'Medium' ? 'bg-[#D97706]/10 text-[#D97706] border border-[#D97706]/20' :
+                                'bg-[#8B0000]/10 text-[#8B0000] border border-[#8B0000]/20'
+                            }`}>
                             {q.difficulty}
                           </span>
                         </td>
@@ -348,7 +345,7 @@ const AdminControl = () => {
                         <td className="px-4 py-3 text-sm">
                           <button
                             onClick={() => handleDeleteQuestion(q._id)}
-                            className="text-red-600 hover:text-red-800 font-semibold"
+                            className="text-[#8B0000] hover:text-[#A52A2A] font-semibold"
                           >
                             Delete
                           </button>
@@ -386,9 +383,8 @@ const AdminControl = () => {
                       <td className="px-4 py-3 text-sm">{user.teamName}</td>
                       <td className="px-4 py-3 text-sm font-semibold">{user.wallet} pts</td>
                       <td className="px-4 py-3 text-sm">
-                        <span className={`px-2 py-1 rounded-full text-xs font-semibold ${
-                          user.isActive ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
-                        }`}>
+                        <span className={`px-2 py-1 rounded-full text-xs font-semibold ${user.isActive ? 'bg-[#6B8E23]/10 text-[#6B8E23] border border-[#6B8E23]/20' : 'bg-[#8B0000]/10 text-[#8B0000] border border-[#8B0000]/20'
+                          }`}>
                           {user.isActive ? 'Active' : 'Inactive'}
                         </span>
                       </td>
@@ -396,14 +392,14 @@ const AdminControl = () => {
                         {user.isActive && (
                           <button
                             onClick={() => handleDeactivateUser(user._id)}
-                            className="text-orange-600 hover:text-orange-800 font-semibold"
+                            className="text-[#CC5500] hover:text-[#E67333] font-semibold"
                           >
                             Deactivate
                           </button>
                         )}
                         <button
                           onClick={() => handleDeleteUser(user._id)}
-                          className="text-red-600 hover:text-red-800 font-semibold"
+                          className="text-[#8B0000] hover:text-[#A52A2A] font-semibold"
                         >
                           Delete
                         </button>

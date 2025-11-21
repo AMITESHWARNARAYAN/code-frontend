@@ -130,7 +130,7 @@ export default function AdminSchedule() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-100 p-4 md:p-6">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-violet-50 to-fuchsia-100 p-4 md:p-6">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8 animate-fade-in">
           <div>
@@ -141,7 +141,7 @@ export default function AdminSchedule() {
           </div>
           <button
             onClick={() => setShowCreateForm(!showCreateForm)}
-            className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-6 py-3 rounded-xl font-bold shadow-lg hover:shadow-xl hover:from-emerald-700 hover:to-teal-700 transform hover:scale-105 active:scale-95 transition-all btn-ripple whitespace-nowrap"
+            className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-xl font-bold shadow-lg hover:shadow-xl hover:from-blue-700 hover:to-indigo-700 transform hover:scale-105 active:scale-95 transition-all btn-ripple whitespace-nowrap"
           >
             {showCreateForm ? '❌ Cancel' : '➕ Create New Auction'}
           </button>
@@ -161,7 +161,7 @@ export default function AdminSchedule() {
                     value={formData.title}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#D97706]"
                     placeholder="e.g., Weekly Coding Challenge"
                   />
                 </div>
@@ -173,7 +173,7 @@ export default function AdminSchedule() {
                     value={formData.scheduledTime}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#D97706]"
                   />
                 </div>
               </div>
@@ -186,7 +186,7 @@ export default function AdminSchedule() {
                   onChange={handleInputChange}
                   required
                   rows="3"
-                  className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#D97706]"
                   placeholder="Describe the auction..."
                 />
               </div>
@@ -201,7 +201,7 @@ export default function AdminSchedule() {
                     onChange={handleInputChange}
                     min="1"
                     required
-                    className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#D97706]"
                   />
                 </div>
                 <div>
@@ -212,7 +212,7 @@ export default function AdminSchedule() {
                     value={formData.maxUsers}
                     onChange={handleInputChange}
                     min="1"
-                    className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#D97706]"
                     placeholder="Unlimited"
                   />
                 </div>
@@ -225,7 +225,7 @@ export default function AdminSchedule() {
                     onChange={handleInputChange}
                     min="10"
                     required
-                    className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#D97706]"
                   />
                 </div>
                 <div>
@@ -237,7 +237,7 @@ export default function AdminSchedule() {
                     onChange={handleInputChange}
                     min="60"
                     required
-                    className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-[#D97706]"
                   />
                 </div>
               </div>

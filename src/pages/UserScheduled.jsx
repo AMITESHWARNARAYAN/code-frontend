@@ -127,7 +127,7 @@ export default function UserScheduled() {
                 <p className="text-blue-800 font-semibold">{notif.message}</p>
                 <button
                   onClick={() => setNotifications(prev => prev.filter(n => n.id !== notif.id))}
-                  className="text-blue-600 hover:text-blue-800"
+                  className="text-[#7C2D3A] hover:text-blue-800"
                 >
                   ✕
                 </button>
@@ -159,7 +159,7 @@ export default function UserScheduled() {
                 <div className="space-y-3 mb-4">
                   <div className="flex items-center justify-between text-sm">
                     <span className="text-gray-600">Starts in:</span>
-                    <span className="font-bold text-blue-600">{formatDateTime(auction.scheduledTime)}</span>
+                    <span className="font-bold text-[#7C2D3A]">{formatDateTime(auction.scheduledTime)}</span>
                   </div>
                   <div className="flex items-center justify-between text-sm">
                     <span className="text-gray-600">Scheduled Time:</span>
